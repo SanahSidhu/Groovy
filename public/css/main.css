@@ -1,0 +1,91 @@
+body {
+    background: linear-gradient(to bottom, #000000 0%, #232B2B 25%);
+}
+
+/*#36454F #2F4F4F*/
+
+.navbar-custom {
+
+    background-color: none; 
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.navbar-custom .navbar-brand
+{
+    color: #e34234;
+    font-size: 38px !important;
+    font-style: italic;
+    margin-left: 20px;
+}
+
+.navbar-custom .nav-link {
+
+    color: #e34234;
+    font-size: 24px !important;
+    margin-right: 20px;
+    margin-left: 35px;
+}
+
+.home-image {
+
+    display: block;
+    margin-left: 30px ;
+    width: 100%;
+    max-width: 540px; 
+    height: auto;
+}
+
+.flex-container {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.img-container {
+
+    flex: 0 0 auto;
+    padding-right: 50px;
+}
+
+.text-container {
+
+    flex: 1;
+    max-width: 600px; 
+}
+
+.text-container h1 {
+
+    color: #e34234;
+    font-weight: bold;
+    font-size: 4rem;
+}
+
+.text-container p {
+
+    color: #fff;
+    font-size: 2rem;
+}
+
+.btn-primary {
+
+    background-color: #e34234;
+    width: 80%; 
+    padding: 10px 20px;
+    font-size: 1.25rem;
+    border: none; 
+}
+
+.btn-primary:hover {
+
+    background-color: #c2201f;
+    border-color: #c2201f;
+}
+
+.btn-primary:focus, .btn-primary:active  {
+
+    background-color: #c2201f !important;
+    border-color: #c2201f;
+    box-shadow: none;
+}
