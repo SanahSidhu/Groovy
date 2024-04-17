@@ -1,12 +1,14 @@
-body {
-    background: linear-gradient(to bottom, #000000 0%, #232B2B 25%);
+html, body {
+    height: 120vh;
+    
+    background: linear-gradient(to bottom, black  0%, #232B2B 55%);
 }
-
-/*#36454F #2F4F4F*/
-
+/* 
+#232B2B
+*/
 .navbar-custom {
 
-    background-color: none; 
+    background-color: transparent !important; 
     padding-top: 0px;
     padding-bottom: 0px;
 }
@@ -88,4 +90,68 @@ body {
     background-color: #c2201f !important;
     border-color: #c2201f;
     box-shadow: none;
+}
+
+.card-container {
+    padding: 20px;
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.record-card {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    /*position: relative;*/
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.record-card img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.record-card:hover img{
+    transform: scale(1.05);
+}
+
+.card-body
+{
+    height: 100px;
+}
+
+.record-card .card-body{
+    background-color: white;
+    padding: 15px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    max-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.card-title, .card-text
+{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1em;
+    margin: 0;
+}
+
+.card-img-top 
+{
+    height: 200px !important ;
+    object-fit: cover !important ;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: block;
 }

@@ -1,12 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('', (req,res) => {
-    res.render('index', {text: 'This is ejs' })
-})
+const {home, discover}  = require('./api.js');
 
-router.get('/about', (req,res) => {
-    res.render('about', {text: 'About page' })
-})
+router.get('/', home);
+
+router.get('/discover', discover)
 
 module.exports = router;

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vinyl Records</title>
+    <link rel="stylesheet" href="/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+    <%- include('partials/navbar') %>
+
+    <% if (records.length > 0) { %>
+        <div class = "card-container">
+            <% records.forEach(function(record) { %>
+                <div class = "card record-card" onclick = "location.href = '/details/<%= record.id%>'">
+                    <img class = "card-img-top" src="<%= record.cover_image %>" alt="cover image">
+                    <div class = "card-body">
+                        <h5 class= "card-title"> <%= record.title %> </h5>
+                        <p class = "card-text"> <%= record.artist %> </p>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    <% } else { %>
+        <p>No records found!</p>
+    <% } %>
+
+    <!-- Pagination -->
+    <% if (pagination.pages > 1) { %>
+        <div>
+            <% for (let i = 1; i <= pagination.pages; i++) { %>
+                <a href="/discover?page=<%= i %>"><%= i %></a>
+            <% } %>
+        </div>
+    <% } %>
+</body>
+</html>
