@@ -5,6 +5,7 @@ A full stack application to display vinyl records from Discogs API.
 - Browse a large collection of vinyl records in a paginated card layout
 - View details about each record such as genre and tracklist
 - Optimized loading times with lazy-loaded images
+- Responsive layout to adjust to the size of the screen
 
 ## Tech Stack
 - Node.js
