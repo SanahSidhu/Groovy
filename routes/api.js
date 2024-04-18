@@ -125,5 +125,5 @@ async function search(req, res) {
 }
 
 
-module.exports = { home, discover, details, search}
+module.exports = { home, discover, details, fetchRecords, search}
 

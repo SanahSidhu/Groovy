@@ -4,7 +4,7 @@ const ejs = require("ejs");
 
 describe('Index rendering', () => {
 
-    test('Rendr index.ejs with required elements', done => {
+    test('Render index.ejs with required elements', done => {
         
         ejs.renderFile(path.join(__dirname, '../views/index.ejs'), {}, (err, html) => {
             
@@ -27,7 +27,7 @@ describe('Discover Page rendering', () => {
 
         const mockData = {
             records: [
-                {id: 1, title: "Record1" ,artist: "Artist1", thumb: "thumb1.png"},
+                {id: 1, title: "Record1" ,artist: "Artist1", thumb: "thumb1.png"}, 
                 {id: 2, title: "Record2" ,artist: "Artist2", thumb: "thumb2.png"}
             ], 
             pagination: {
