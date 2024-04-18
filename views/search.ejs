@@ -15,10 +15,12 @@
             <input type = "text" placeholder = "Search by album title or artist" name = "search">
             <button type = "submit"> Search </button>
         </form>
+        <% if (searchQuery && searchQuery.length > 0) { %>
+            <h2>Showing results for "<%= searchQuery %>"</h2>
+        <% } %>
     </div>
 
     <% if (records.length > 0) { %>
-        <div class="results-container">
             <div class="card-container">
                 <% records.forEach(function(record) { %>
                     <div class="card record-card" onclick="location.href='/details/<%= record.id%>'">
@@ -30,13 +32,10 @@
                     </div>
                 <% }); %>
             </div>
-        </div>
     <% } %>
 
-    <div class = "text-container">
-    <h2><i> You may like...</i></h2>
-    </div>
     <div class = "see-more-container">
+        <h2>You may like...</h2>
         <a href="/discover" class="see-more-link">See more &gt;&gt;</a>
     </div>
     <% if (randomrecords.length > 0) { %>

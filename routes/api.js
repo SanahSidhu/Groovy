@@ -7,7 +7,7 @@ function home(req, res) {
     res.render("./index")
 }
 
-async function fetchRecords(page = 1, per_page = 30)
+async function fetchRecords(page = 1, per_page = 28)
 {
     const send_params = {
         type: 'release',
@@ -128,7 +128,7 @@ async function search(req, res) {
     const query = req.query.search || '';
 
     const page = Math.floor(Math.random() * 100) + 1;
-    const per_page = 5;
+    const per_page = 4;
     const randomRecords = await fetchRecords(page, per_page);
 
     let searchResults = [];
