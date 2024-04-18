@@ -18,7 +18,25 @@ async function fetchRecords(page = 1, per_page = 30)
     try {
         const response = await axios.get(URL, {params: send_params, headers: {'Authorization': `Discogs token=${DISCOGS_TOKEN}`} });
         console.log("Data received from discogs: ", response.data);
-        return response.data;
+        
+        const records = response.data.results.map(item => {
+            const splitTitle = item.title.split(' - ');
+            const artist = splitTitle[0] || 'Unknown Artist';
+            const title = splitTitle[1] || 'Untitled';
+        
+            return {
+                id: item.id,
+                title: title.trim(),
+                artist: artist.trim(),
+                thumb: item.thumb
+            };
+        });
+        
+        return {
+            results: records, pagination: response.data.pagination
+        };
+        
+        
     }
     
     catch (error)
