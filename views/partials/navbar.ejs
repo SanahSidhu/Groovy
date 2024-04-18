@@ -1,8 +1,8 @@
 <nav class = "navbar navbar-expand-lg navbar-custom">
-    <a class = "navbar-brand" href ="#"> Groovy </a>
+    <a class = "navbar-brand" href ="/"> Groovy </a>
     <div class=" ms-auto navbar-nav">
-        <a class="nav-link" href="/">Home</a>
-        <a class="nav-link" href="/discover">Discover</a>
-        <a class = "nav-link" href="/search">Search</a>
+        <a class="nav-link <%= active === '' ? 'active': '' %>" href = "/">Home</a>
+        <a class="nav-link <%= active === 'discover' ? 'active': '' %>" href="/discover">Discover</a>
+        <a class = "nav-link <%= active === 'search' ? 'active': '' %>" href="/search">Search</a>
     </div>
 </nav>

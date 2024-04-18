@@ -7,7 +7,7 @@
 <body>
 
     <%- include('partials/navbar') %>
-
+    
     <% if (records.length > 0) { %>
         <div class = "card-container">
             <% records.forEach(function(record) { %>
@@ -52,29 +52,7 @@
     <% } %>
 
 
-    <script>
-        // Lazy loading images script
-        document.addEventListener('DOMContentLoaded', function() {
+    <script src = "/js/lazy_load.js"></script>
 
-            var lazyloadImages = document.querySelectorAll("img.lazyload");    
-
-            var imageObserver = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(function(entry) {
-
-                    if (entry.isIntersecting) {
-                        
-                        var image = entry.target;
-                        image.src = image.dataset.src;
-                        image.classList.remove("lazyload");
-                        imageObserver.unobserve(image);
-                    }
-                });
-            });
-        
-            lazyloadImages.forEach(function(image) {
-                imageObserver.observe(image);
-            });
-        });
-        </script>
 </body>
 </html>

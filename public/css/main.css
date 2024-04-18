@@ -7,7 +7,6 @@ html, body {
 #232B2B
 */
 .navbar-custom {
-
     background-color: transparent !important; 
     padding-top: 0px;
     padding-bottom: 50px;
@@ -28,6 +27,12 @@ html, body {
     margin-left: 35px;
 }
 
+.navbar-custom .nav-link.active {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+
 .home-image {
 
     display: block;
@@ -40,22 +45,26 @@ html, body {
 .flex-container {
 
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
-    padding: 50px;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
 }
 
 .img-container {
 
-    flex: 0 0 auto;
+    flex: 1 1 150px;
+    text-align: center;
     padding-right: 50px;
 }
 
+
 .text-container {
 
-    margin-top: 40px;
+    margin-top: 30px;
     margin-left: 20px;
-    flex: 1;
+    flex: 1 1 150px;
     max-width: 600px; 
 }
 
@@ -101,16 +110,19 @@ html, body {
     box-shadow: none;
 }
 
+
 .card-container {
     
-    padding: 10px;
     display: grid;
+    padding: 10px;
     grid-gap: 40px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(5, 1fr);
 }
 
 .record-card {
 
+    max-width: 200px;
+    margin: auto;
     height: 300px;
     display: flex;
     flex-direction: column;
@@ -207,7 +219,7 @@ img {
     padding: 8px;
     margin-right: -4px;
     border: none;
-    border-radius: 4px 0x 0px 4px !important;
+    border-radius: 4px 0px 0px 4px !important;
     margin-bottom: 100px;
 }
 
