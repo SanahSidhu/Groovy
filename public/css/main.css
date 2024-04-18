@@ -1,7 +1,11 @@
 html, body {
     height: 120vh;
-    
-    background: linear-gradient(to bottom, black  0%, #232B2B 55%);
+    margin: 0;
+    background: linear-gradient(to bottom, white  0%, #f7f1e3  35%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    /*background: linear-gradient(to bottom, black  0%, #232B2B 55%);*/
 }
 /* 
 #232B2B
@@ -28,7 +32,7 @@ html, body {
 }
 
 .navbar-custom .nav-link.active {
-    color: #ffffff;
+    color: black;
     font-weight: bold;
 }
 
@@ -79,7 +83,7 @@ html, body {
 
 .text-container p {
 
-    color: #fff;
+    color: black;
     font-size: 2rem;
 }
 
@@ -115,7 +119,7 @@ html, body {
 }
 
 .record-card {
-
+    
     max-width: 200px;
     margin: auto;
     height: 300px;
@@ -128,7 +132,6 @@ html, body {
 }
 
 .record-card img {
-
     width: 100%;
     height: auto;
     transition: transform 0.3s ease;
@@ -161,8 +164,19 @@ html, body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 1em;
     margin: 0;
+}
+
+.card-title {
+    color: #e34234;
+    font-weight: bold;
+    font-size: 1.05em;
+}
+
+.card-text
+{
+    color: black;
+    font-size: 1em;
 }
 
 .card-img-top 
@@ -187,7 +201,7 @@ html, body {
 
 .details-container .details {
     margin-left: 20px;
-    color: white;
+    color: black;
 }
 
 
@@ -204,7 +218,7 @@ img {
 }
 
 .search-container {
-    color: white;
+    color: black;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 40px ;
@@ -233,7 +247,7 @@ img {
     padding: 8.5px;
     border: none;
     background-color: #e34234;
-    color: white;
+    color: black;
     border-radius: 0 4px 4px 0;
     cursor: pointer;
 }
@@ -246,7 +260,7 @@ img {
     margin-left: 20px;
     margin-top: 50px; 
     padding-right: 35px;
-    color: white;
+    color: black;
 }
 
 .see-more-link {
@@ -277,7 +291,7 @@ img {
     display: inline-block;
     padding: 8px 16px;
     text-decoration: none; 
-    color: #ffffff;
+    color: white;
     background-color: #e34234;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     transition: background-color 0.3s;
@@ -287,7 +301,7 @@ img {
 .page-link.active {
 
     background-color: #c2201f;
-    color: #ffffff;
+    color: white;
     font-weight: bold;
 }
 
