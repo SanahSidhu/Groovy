@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Vinyl Records</title>
     <link rel="stylesheet" href="/css/bootstrap.css"/>
     <link rel="stylesheet" href="/css/main.css">
 </head>
@@ -13,7 +12,7 @@
         <div class = "card-container">
             <% records.forEach(function(record) { %>
                 <div class = "card record-card" onclick = "location.href = '/details/<%= record.id%>'">
-                    <img class = "card-img-top" src="<%= record.cover_image %>" alt="cover image">
+                    <img class = "card-img-top lazyload" data-src="<%= record.thumb %>"  src = "/img/placeholder.png" alt="cover image">
                     <div class = "card-body">
                         <h5 class= "card-title"> <%= record.title %> </h5>
                         <p class = "card-text"> <%= record.artist %> </p>
@@ -33,5 +32,27 @@
             <% } %>
         </div>
     <% } %>
+
+
+    <script>
+        // Lazy loading images script
+        document.addEventListener('DOMContentLoaded', function() {
+            var lazyloadImages = document.querySelectorAll("img.lazyload");    
+            var imageObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        var image = entry.target;
+                        image.src = image.dataset.src;
+                        image.classList.remove("lazyload");
+                        imageObserver.unobserve(image);
+                    }
+                });
+            });
+        
+            lazyloadImages.forEach(function(image) {
+                imageObserver.observe(image);
+            });
+        });
+        </script>
 </body>
 </html>

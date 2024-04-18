@@ -10,7 +10,7 @@ html, body {
 
     background-color: transparent !important; 
     padding-top: 0px;
-    padding-bottom: 0px;
+    padding-bottom: 50px;
 }
 .navbar-custom .navbar-brand
 {
@@ -53,6 +53,7 @@ html, body {
 
 .text-container {
 
+    margin-left: 20px;
     flex: 1;
     max-width: 600px; 
 }
@@ -63,6 +64,13 @@ html, body {
     font-weight: bold;
     font-size: 4rem;
 }
+
+.text-container h2 {
+
+    color: #fff;
+    font-size: 2.5rem;
+}
+
 
 .text-container p {
 
@@ -93,7 +101,7 @@ html, body {
 }
 
 .card-container {
-    padding: 20px;
+    padding: 10px;
     display: grid;
     grid-gap: 40px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -154,4 +162,70 @@ html, body {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     display: block;
+}
+
+
+.details-container {
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+
+.details-container .details {
+    margin-left: 20px;
+    color: white;
+}
+
+
+body {
+    
+    
+    background-color: #333; 
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.search-container {
+    text-align:center;
+    margin-top: 50px;
+}
+
+.search-container input[type="text"]
+{
+    width: 600px;
+    padding: 8px;
+    margin-right: -4px;
+    border: none;
+    border-radius: 4px 0x 0px 4px !important;
+    margin-bottom: 100px;
+}
+
+.search-container button {
+    padding: 8.5px;
+    border: none;
+    background-color: #e34234;
+    color: white;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.see-more-container {
+    text-align: right; 
+    margin-top: 0; 
+    padding-right: 20px;
+}
+
+.see-more-link {
+
+    font-weight: bold;
+    text-decoration: none;
+    color:  #e34234;
+}
+
+.see-more-link:hover {
+    text-decoration: underline;
 }

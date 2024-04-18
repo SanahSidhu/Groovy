@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <%- include('partials/navbar') %>
+
+    <div class = "search-container">
+        <form action = "/search" method = "get">
+            <input type = "text" placeholder = "Search by album title or artist" name = "search">
+            <button type = "submit"> Search </button>
+        </form>
+    </div>
+
+    <% if (records.length > 0) { %>
+        <div class="results-container">
+            <h2>Search Results:</h2>
+            <div class="card-container">
+                <% records.forEach(function(record) { %>
+                    <div class="card record-card" onclick="location.href='/details/<%= record.id%>'">
+                        <img class="card-img-top" src="<%= record.thumb %>" alt="cover image">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= record.title %></h5>
+                            <p class="card-text"><%= record.artist %></p>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+    <% } %>
+
+    <div class = "text-container">
+    <h2><i> You may like...</i></h2>
+    </div>
+    <div class = "see-more-container">
+        <a href="/discover" class="see-more-link">See more &gt;&gt;</a>
+    </div>
+    <% if (randomrecords.length > 0) { %>
+        <div class = "card-container">
+            <% randomrecords.forEach(function(record) { %>
+                <div class = "card record-card" onclick = "location.href = '/details/<%= record.id%>'">
+                    <img class = "card-img-top" src="<%= record.thumb %>" alt="cover image">
+                    <div class = "card-body">
+                        <h5 class= "card-title"> <%= record.title %> </h5>
+                        <p class = "card-text"> <%= record.artist %> </p>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+        
+    <% } else { %>
+        <p>No records found!</p>
+    <% } %>
+</body>
+</html>

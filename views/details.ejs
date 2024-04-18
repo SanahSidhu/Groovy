@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vinyl Record Details</title>
+    <link rel="stylesheet" href="/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+<%- include('partials/navbar') %>
+
+
+<% if (record) { %>
+    <div class="container details-container">
+        <div>
+            <% if (record.images && record.images.length > 0) { %>
+                <img src="<%= record.images[0].uri %>" alt="<%= record.title %> cover">
+            <% } 
+            
+                else { %>
+                <img src="/path/to/default-image.jpeg" alt="Default Image">
+            <% } %>
+        </div>
+        
+        <div class="details">
+            <h1><%= record.title %></h1>
+            <p>Artist: <%= record.artists[0].name %></p>
+            
+            <% if (record.genres && Array.isArray(record.genres)) { %>
+
+                <p>Genre: <%= record.genres.join(', ') %></p>
+            <% }
+             
+                else { %>
+                <p>Genre: Not available</p>
+            <% } %>
+
+
+            <h3>Tracklist</h3>
+            <ul>
+                <% if (record.tracklist && record.tracklist.length > 0) { %>
+
+                    <% record.tracklist.forEach(function(track) { %>
+                        <li><%= track.position %> - <%= track.title %></li>
+                    <% }); %>
+                <% } 
+                    
+                    else { %>
+                    <li>Tracklist not available</li>
+                <% } %>
+            </ul>
+
+
+        </div>
+    </div>
+<% } else { %>
+    <p style="color: white;">Record details not available.</p>
+<% } %>
+
+
+</body>
+</html>
