@@ -26,10 +26,28 @@
 
     <!-- Pagination -->
     <% if (pagination.pages > 1) { %>
-        <div>
-            <% for (let i = 1; i <= pagination.pages; i++) { %>
-                <a href="/discover?page=<%= i %>"><%= i %></a>
-            <% } %>
+        <div class = "page-container">
+        <%
+            let window = 5;
+            let current = pagination.page || 1;
+            let total = pagination.pages;
+            let start = Math.max(current - Math.floor(window/2), 1);
+            let end = Math.min(start + window - 1, total);
+            start = Math.max(end - window +1, 1);
+        %>
+
+        <% if(current > 1) {%>
+            <a href = "/discover?page=<%= current - 1 %>" class = "page-link">Prev</a>
+
+        <% } %>
+
+        <% for (let i = start; i <= end; i++) { %>
+            <a href = "/discover?page=<%= i %>" class = "<%= i === current ? 'page-link active' : 'page-link' %>"><%= i %></a>
+        <% } %>
+
+        <% if (current < total) { %>
+            <a href = "/discover?page=<%= current + 1 %>" class = "page-link"> Next </a>
+        <% }%>
         </div>
     <% } %>
 
@@ -37,10 +55,14 @@
     <script>
         // Lazy loading images script
         document.addEventListener('DOMContentLoaded', function() {
+
             var lazyloadImages = document.querySelectorAll("img.lazyload");    
+
             var imageObserver = new IntersectionObserver(function(entries, observer) {
                 entries.forEach(function(entry) {
+
                     if (entry.isIntersecting) {
+                        
                         var image = entry.target;
                         image.src = image.dataset.src;
                         image.classList.remove("lazyload");

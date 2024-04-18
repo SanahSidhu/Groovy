@@ -53,6 +53,7 @@ html, body {
 
 .text-container {
 
+    margin-top: 40px;
     margin-left: 20px;
     flex: 1;
     max-width: 600px; 
@@ -101,6 +102,7 @@ html, body {
 }
 
 .card-container {
+    
     padding: 10px;
     display: grid;
     grid-gap: 40px;
@@ -108,6 +110,7 @@ html, body {
 }
 
 .record-card {
+
     height: 300px;
     display: flex;
     flex-direction: column;
@@ -118,6 +121,7 @@ html, body {
 }
 
 .record-card img {
+
     width: 100%;
     height: auto;
     transition: transform 0.3s ease;
@@ -184,12 +188,15 @@ body {
     
     background-color: #333; 
 }
+
+
 img {
     max-width: 100%;
     height: auto;
 }
 
 .search-container {
+
     text-align:center;
     margin-top: 50px;
 }
@@ -205,6 +212,7 @@ img {
 }
 
 .search-container button {
+
     padding: 8.5px;
     border: none;
     background-color: #e34234;
@@ -214,6 +222,7 @@ img {
 }
 
 .see-more-container {
+
     text-align: right; 
     margin-top: 0; 
     padding-right: 20px;
@@ -227,5 +236,42 @@ img {
 }
 
 .see-more-link:hover {
+
     text-decoration: underline;
+}
+
+
+.page-container {
+
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px 0;
+}
+
+
+.page-link {
+
+    display: inline-block;
+    padding: 8px 16px;
+    text-decoration: none; 
+    color: #ffffff;
+    background-color: #e34234;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s;
+}
+
+
+.page-link.active {
+
+    background-color: #c2201f;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.page-link:hover {
+
+    background-color: #e85d59;
+    cursor: pointer;
 }

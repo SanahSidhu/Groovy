@@ -19,7 +19,6 @@
 
     <% if (records.length > 0) { %>
         <div class="results-container">
-            <h2>Search Results:</h2>
             <div class="card-container">
                 <% records.forEach(function(record) { %>
                     <div class="card record-card" onclick="location.href='/details/<%= record.id%>'">
@@ -54,7 +53,7 @@
         </div>
         
     <% } else { %>
-        <p>No records found!</p>
+        <p>Sorry! It's not you...it's us :(</p>
     <% } %>
 </body>
 </html>
