@@ -6,7 +6,11 @@ describe('Index rendering', () => {
 
     test('Render index.ejs with required elements', done => {
         
-        ejs.renderFile(path.join(__dirname, '../views/index.ejs'), {}, (err, html) => {
+        const locals = {
+            active: ''
+        };
+        
+        ejs.renderFile(path.join(__dirname, '../views/index.ejs'), locals, (err, html) => {
             
             if (err) return done(err);
             
@@ -33,7 +37,8 @@ describe('Discover Page rendering', () => {
             pagination: {
                 pages: 3, 
                 page: 2
-            }
+            },
+            active: 'discover'
         };
 
         ejs.renderFile(path.join(__dirname, '../views/discover.ejs'), mockData, (err, html) => {
@@ -59,7 +64,8 @@ describe('Discover Page rendering', () => {
             pagination: {
                 pages: 0, 
                 page: 1
-            }
+            },
+            active: 'discover'
         };
 
         ejs.renderFile(path.join(__dirname,'../views/discover.ejs'), mockData,(err, html) => {
